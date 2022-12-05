@@ -1,0 +1,24 @@
+<h1 class="pb-4 py-10 text-4xl text-left font-medium">Explore Random</h1>
+
+<div class="grid grid-cols-5 gap-2">
+  <% if(recipe != ''){ %>
+  <a
+    href="/recipe/<%= recipe._id %>"
+    class="col text-center category__link transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 mb-4"
+  >
+    <div class="category__img category__img--large shadow">
+      <img
+        src="/uploads/<%= recipe.image %>"
+        alt="<%= recipe.name %>"
+        class="p-3 bg-white border rounded h-80 w-96"
+        loading="lazy"
+      />
+    </div>
+    <div class="pt-1 font-medium"><%= recipe.name %></div>
+  </a>
+  <% } else{ %>
+  <p>No items found</p>
+  <% } %>
+
+  <!-- <p>No items found.</p> -->
+</div>
